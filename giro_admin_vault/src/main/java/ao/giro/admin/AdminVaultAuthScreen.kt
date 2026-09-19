@@ -1,4 +1,4 @@
-﻿package ao.giro.admin
+package ao.giro.admin
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

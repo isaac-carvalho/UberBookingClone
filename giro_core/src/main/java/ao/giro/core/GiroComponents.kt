@@ -1,4 +1,4 @@
-﻿package ao.giro.core
+package ao.giro.core
 
 import android.media.AudioManager
 import android.media.ToneGenerator

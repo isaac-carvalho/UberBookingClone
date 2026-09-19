@@ -1,4 +1,4 @@
-﻿package com.example.uberbookingexperience.ui.screens.activeRide
+package com.example.uberbookingexperience.ui.screens.activeRide
 
 import android.widget.Toast
 import androidx.activity.compose.BackHandler

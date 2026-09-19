@@ -1,4 +1,4 @@
-﻿package ao.giro.driver
+package ao.giro.driver
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

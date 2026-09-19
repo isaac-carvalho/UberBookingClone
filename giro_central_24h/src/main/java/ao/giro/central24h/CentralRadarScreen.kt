@@ -1,4 +1,4 @@
-﻿package ao.giro.central24h
+package ao.giro.central24h
 
 import android.widget.Toast
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-﻿package ao.giro.admin
+package ao.giro.admin
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

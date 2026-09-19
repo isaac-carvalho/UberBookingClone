@@ -1,4 +1,4 @@
-﻿package ao.giro.admin
+package ao.giro.admin
 
 import android.widget.Toast
 import androidx.compose.foundation.background

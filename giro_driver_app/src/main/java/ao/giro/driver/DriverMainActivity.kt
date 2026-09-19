@@ -1,4 +1,4 @@
-﻿package ao.giro.driver
+package ao.giro.driver
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

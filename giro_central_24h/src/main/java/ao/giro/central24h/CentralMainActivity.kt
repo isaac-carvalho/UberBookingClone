@@ -1,4 +1,4 @@
-﻿package ao.giro.central24h
+package ao.giro.central24h
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

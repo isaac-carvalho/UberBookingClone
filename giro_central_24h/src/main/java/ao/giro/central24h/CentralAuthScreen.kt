@@ -1,4 +1,4 @@
-﻿package ao.giro.central24h
+package ao.giro.central24h
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

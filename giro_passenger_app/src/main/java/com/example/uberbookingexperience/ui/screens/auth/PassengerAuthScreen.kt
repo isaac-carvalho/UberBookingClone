@@ -1,4 +1,4 @@
-﻿package com.example.uberbookingexperience.ui.screens.auth
+package com.example.uberbookingexperience.ui.screens.auth
 
 import android.widget.Toast
 import androidx.compose.foundation.background

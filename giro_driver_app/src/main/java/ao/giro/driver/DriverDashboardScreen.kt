@@ -1,4 +1,4 @@
-﻿package ao.giro.driver
+package ao.giro.driver
 
 import android.widget.Toast
 import androidx.compose.animation.core.LinearEasing

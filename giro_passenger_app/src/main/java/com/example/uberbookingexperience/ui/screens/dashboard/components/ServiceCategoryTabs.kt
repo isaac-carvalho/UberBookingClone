@@ -1,4 +1,4 @@
-﻿package com.example.uberbookingexperience.ui.screens.dashboard.components
+package com.example.uberbookingexperience.ui.screens.dashboard.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
