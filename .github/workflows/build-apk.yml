@@ -43,9 +43,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: github.ref == 'refs/heads/main'
         with:
-          tag_name: v1.0.0
-          name: "UberBookingClone v1.0.0 (APK)"
-          body: "Instale o APK no seu celular Android para testar a experiência interativa."
+          tag_name: v1.1.0
+          name: "UberBookingClone v1.1.0 (Android 14+ / SDK 34)"
+          body: "APK atualizado com suporte ao Android 14+ (targetSdk 34) e bibliotecas Compose estáveis."
           files: app/build/outputs/apk/debug/app-debug.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
