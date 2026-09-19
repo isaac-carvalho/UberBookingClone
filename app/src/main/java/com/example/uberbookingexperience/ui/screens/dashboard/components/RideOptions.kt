@@ -11,12 +11,12 @@ data class RideOptions(
 
 fun getRideOptions() : List<RideOptions> {
     val options = arrayListOf<RideOptions>()
-    options.add(RideOptions("Bike", R.drawable.ub__mode_nav_bike_scooter))
-    options.add(RideOptions("E Bike", R.drawable.ub__mode_nav_bike))
-    options.add(RideOptions("Uber Go", R.drawable.ub__mode_nav_ride))
-    options.add(RideOptions("Carpool", R.drawable.ub__mode_nav_carpool))
-    options.add(RideOptions("Uber X", R.drawable.ub__mode_nav_ride))
-    options.add(RideOptions("Scooter", R.drawable.ub__mode_nav_bike))
-    options.add(RideOptions("Rental", R.drawable.ub__mode_nav_ride))
+    options.add(RideOptions("GIRO Moto", R.drawable.ub__mode_nav_bike_scooter))
+    options.add(RideOptions("Bicicleta", R.drawable.ub__mode_nav_bike))
+    options.add(RideOptions("GIRO Clássico", R.drawable.ub__mode_nav_ride))
+    options.add(RideOptions("Partilhado", R.drawable.ub__mode_nav_carpool))
+    options.add(RideOptions("GIRO Conforto", R.drawable.ub__mode_nav_ride))
+    options.add(RideOptions("Trotinete", R.drawable.ub__mode_nav_bike))
+    options.add(RideOptions("Aluguer", R.drawable.ub__mode_nav_ride))
     return options
 }

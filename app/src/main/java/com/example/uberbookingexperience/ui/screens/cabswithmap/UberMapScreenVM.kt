@@ -28,51 +28,46 @@ class UberMapScreenVM : ViewModel() {
 
     var cabListing = mutableStateListOf(
         UberCabInfo(
-            cabInfo = "Uber Pool",
-            cabIcon =
-            R.drawable.ub__mode_nav_carpool,
-            cabPrice = 80.80f,
+            cabInfo = "GIRO Clássico",
+            cabIcon = R.drawable.ub__mode_nav_ride,
+            cabPrice = 1800f,
             isChecked = true,
-            cabPriceAlter = 100.20f,
-            carTime = "3:09 PM"
+            cabPriceAlter = 2200f,
+            carTime = "15:09"
         ),
         UberCabInfo(
-            cabInfo = "Uber Car",
-            cabIcon =
-            R.drawable.ub__mode_nav_ride,
-            cabPrice = 120.80f,
-            cabPriceAlter = 200.20f,
-            carTime = "1:19 PM"
+            cabInfo = "GIRO Conforto",
+            cabIcon = R.drawable.ub__mode_nav_ride,
+            cabPrice = 2800f,
+            cabPriceAlter = 3400f,
+            carTime = "15:15"
         ),
         UberCabInfo(
-            cabInfo = "Uber Bike Scooter",
-            cabIcon =
-            R.drawable.ub__mode_nav_bike_scooter,
-            cabPrice = 120.80f,
-            carTime = "11:19 AM"
+            cabInfo = "GIRO Moto",
+            cabIcon = R.drawable.ub__mode_nav_bike_scooter,
+            cabPrice = 850f,
+            carTime = "15:05"
         ),
         UberCabInfo(
-            cabInfo = "Uber Pool",
-            cabIcon =
-            R.drawable.ub__mode_nav_carpool,
-            cabPrice = 80.80f,
-            cabPriceAlter = 100.20f,
-            carTime = "3:09 PM"
+            cabInfo = "GIRO Partilhado",
+            cabIcon = R.drawable.ub__mode_nav_carpool,
+            cabPrice = 1200f,
+            cabPriceAlter = 1500f,
+            carTime = "15:12"
         ),
         UberCabInfo(
-            cabInfo = "Uber Bike",
-            cabIcon =
-            R.drawable.ub__mode_nav_bike,
-            cabPrice = 120.80f,
-            carTime = "11:19 AM"
+            cabInfo = "GIRO XL",
+            cabIcon = R.drawable.ub__mode_nav_ride,
+            cabPrice = 4500f,
+            cabPriceAlter = 5500f,
+            carTime = "15:20"
         ),
         UberCabInfo(
-            cabInfo = "Uber Car",
-            cabIcon =
-            R.drawable.ub__mode_nav_ride,
-            cabPrice = 80.80f,
-            cabPriceAlter = 110.20f,
-            carTime = "1:19 PM"
+            cabInfo = "GIRO Expresso",
+            cabIcon = R.drawable.ub__mode_nav_ride,
+            cabPrice = 1600f,
+            cabPriceAlter = 2000f,
+            carTime = "15:08"
         )
     )
     var selectedUberCab: UberCabInfo? = null

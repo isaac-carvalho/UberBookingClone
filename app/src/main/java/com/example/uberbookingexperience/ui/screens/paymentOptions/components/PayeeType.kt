@@ -23,22 +23,22 @@ fun PayeeType(
         item {
             UberSelectableChip(
                 modifier = Modifier.padding(start = MaterialTheme.spacing.small),
-                title = "Personal",
-                isSelected = selectedItemTitle == "Personal",
+                title = "Pessoal",
+                isSelected = selectedItemTitle == "Pessoal",
                 icon = Icons.Filled.Person,
                 onClick = {
-                    onItemSelected("Personal")
+                    onItemSelected("Pessoal")
                 }
             )
         }
         item {
             UberSelectableChip(
                 modifier = Modifier.padding(start = MaterialTheme.spacing.small),
-                title = "Business",
-                isSelected = selectedItemTitle == "Business",
+                title = "Empresa",
+                isSelected = selectedItemTitle == "Empresa",
                 icon = Icons.Filled.Work,
                 onClick = {
-                    onItemSelected("Business")
+                    onItemSelected("Empresa")
                 },
                 selectedBackgroundColor = MaterialTheme.colorScheme.secondary
             )

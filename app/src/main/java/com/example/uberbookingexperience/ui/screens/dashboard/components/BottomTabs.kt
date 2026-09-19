@@ -28,8 +28,8 @@ fun BottomTabs() {
     val tabsList by rememberSaveable {
         mutableStateOf(
             listOf(
-                "Home" to Icons.Default.Home,
-                "Account" to Icons.Default.AccountBox
+                "Início" to Icons.Default.Home,
+                "Conta" to Icons.Default.AccountBox
             )
         )
     }

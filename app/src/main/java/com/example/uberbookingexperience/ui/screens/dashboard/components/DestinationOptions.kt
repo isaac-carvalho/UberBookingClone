@@ -56,7 +56,7 @@ fun PickupSelection(modifier: Modifier, onGotoWhereScreen: () -> Unit) {
                 modifier = Modifier.size(36.dp)
             )
             Text(
-                text = "Enter pickup point",
+                text = "Ponto de recolha",
                 color = MaterialTheme.colorScheme.primary,
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.alpha(ContentAlpha.medium)
@@ -78,7 +78,7 @@ fun PickupSelection(modifier: Modifier, onGotoWhereScreen: () -> Unit) {
                 tint = MaterialTheme.colorScheme.primary
             )
             Text(
-                text = "Now",
+                text = "Agora",
                 color = MaterialTheme.colorScheme.primary,
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontWeight = FontWeight.Medium
@@ -115,7 +115,7 @@ fun DestinationSelection(modifier: Modifier, onGotoWhereScreen: () -> Unit) {
             )
         }
         Text(
-            text = "Set destination on map",
+            text = "Escolher destino no mapa",
             color = MaterialTheme.colorScheme.primary,
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier

@@ -219,7 +219,7 @@ fun ChooseCabTypeScreen(
                     tint = colorWhite.copy(alpha = 0.4f)
                 )
                 Text(
-                    "Choose a ride",
+                    "Escolha uma viagem",
                     style = MaterialTheme.typography.titleMedium.copy(textAlign = TextAlign.Center),
                     color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.8f),
                     modifier = Modifier
@@ -390,7 +390,7 @@ fun ChooseCabTypeScreen(
                     modifier = Modifier.navigationBarsPadding()
                 ) {
                     UberButton(
-                        text = "Choose " + selectedUberCab.cabInfo,
+                        text = "Confirmar " + selectedUberCab.cabInfo,
                         modifier =
                         Modifier
                             .weight(1f)

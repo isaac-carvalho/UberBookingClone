@@ -43,9 +43,17 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: github.ref == 'refs/heads/main'
         with:
-          tag_name: v1.1.0
-          name: "UberBookingClone v1.1.0 (Android 14+ / SDK 34)"
-          body: "APK atualizado com suporte ao Android 14+ (targetSdk 34) e bibliotecas Compose estáveis."
+          tag_name: v1.2.0
+          name: "GIRO v1.2.0 (Angola - Kz / Pouca Internet / Android 14+)"
+          body: |
+            ### GIRO - Versão v1.2.0
+            - **Nome**: GIRO
+            - **Idioma**: Português de Portugal (pt-PT)
+            - **Moeda**: Kwanza de Angola (Kz)
+            - **Endereços de Angola**: Aeroporto 4 de Fevereiro, Ilha de Luanda, Talatona, Belas Shopping, Camama, Fortaleza de São Miguel
+            - **Poupança de Dados / Internet**: Otimizado para consumir o mínimo de dados móveis (redes 2G/3G/4G instáveis em África)
+            - **Tamanho Leve**: ~18MB (bem abaixo do limite de 25MB)
+            - **Android Moderno**: targetSdk 34 (Android 14+ sem aviso de versão antiga)
           files: app/build/outputs/apk/debug/app-debug.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

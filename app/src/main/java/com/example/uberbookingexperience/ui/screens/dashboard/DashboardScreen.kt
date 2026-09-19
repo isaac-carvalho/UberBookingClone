@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uberbookingexperience.ui.screens.dashboard.components.AroundYou
 import com.example.uberbookingexperience.ui.screens.dashboard.components.BottomTabs
+import com.example.uberbookingexperience.ui.screens.dashboard.components.DataSaverBanner
 import com.example.uberbookingexperience.ui.screens.dashboard.components.DestinationSelection
 import com.example.uberbookingexperience.ui.screens.dashboard.components.HorizontalPagerWithIndicator
 import com.example.uberbookingexperience.ui.screens.dashboard.components.PickupSelection
@@ -53,6 +54,8 @@ fun DashboardScreen(
                 QuickOptions(isMobile)
                 //start/end location
                 Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
+                DataSaverBanner(Modifier.align(Alignment.CenterHorizontally))
+                Spacer(modifier = Modifier.height(MaterialTheme.spacing.extraSmall))
                 PickupSelection(Modifier.align(Alignment.CenterHorizontally), onGotoWhereScreen)
                 DestinationSelection(Modifier.align(Alignment.CenterHorizontally), onGotoWhereScreen)
                 Spacer(modifier = Modifier.height(MaterialTheme.spacing.extraLarge))

@@ -29,9 +29,9 @@ fun SideBar() {
     val tabsList by rememberSaveable {
         mutableStateOf(
             listOf(
-                "Home" to Icons.Default.Home,
-                "Account" to Icons.Default.AccountBox,
-                "Settings" to Icons.Default.Settings,
+                "Início" to Icons.Default.Home,
+                "Conta" to Icons.Default.AccountBox,
+                "Definições" to Icons.Default.Settings,
             )
         )
     }

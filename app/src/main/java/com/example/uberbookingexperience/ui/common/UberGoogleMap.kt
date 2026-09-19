@@ -36,13 +36,21 @@ import com.google.maps.android.compose.rememberCameraPositionState
 fun UberGoogleMap(
     modifier: Modifier = Modifier,
     cameraPositionState: CameraPositionState = rememberCameraPositionState(),
-    mapProperties: MapProperties = MapProperties(isMyLocationEnabled = false),
+    mapProperties: MapProperties = MapProperties(
+        isMyLocationEnabled = false,
+        isBuildingEnabled = false,
+        isIndoorEnabled = false,
+        isTrafficEnabled = false
+    ),
     cameraPositionDefault: CameraPosition? = null,
     latLngBounds: LatLngBounds? = null,
     locationSource: LocationSource? = null,
     mapZoomAnimationDuration: Int = 1_000,
     mapZoomPadding: Int = ((rememberDeviceWidth() * 5) / 50),
-    mapUiSettings: MapUiSettings = MapUiSettings(zoomControlsEnabled = false),
+    mapUiSettings: MapUiSettings = MapUiSettings(
+        zoomControlsEnabled = false,
+        tiltGesturesEnabled = false
+    ),
     mapMovingCallback: () -> Unit = {},
     nonMapContent: (@Composable BoxScope.() -> Unit)? = null,
     content: (

@@ -66,7 +66,7 @@ fun FinalisingDriverScreen(
                 modifier = Modifier
                     .padding(MaterialTheme.spacing.medium)
                     .align(Alignment.Start),
-                text = "Ride requested, finalising driver details",
+                text = "Viagem pedida, a finalizar detalhes do motorista",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Medium
             )
@@ -79,26 +79,26 @@ fun FinalisingDriverScreen(
             HighlightItem(
                 modifier = Modifier.padding(MaterialTheme.spacing.large),
                 icon = R.drawable.ic_map_location,
-                title = "Dropoff by 17:26"
+                title = "Chegada prevista às 17:26"
             )
             UberDivider()
             UberBottomSheetListItem(
                 icon = Icons.Filled.LocationOn,
-                title = "Dev Arc Commercial Complex",
+                title = "Belas Shopping, Talatona",
                 subtitle = null,
-                actionTitle = "Add or Change"
+                actionTitle = "Alterar"
             )
             UberBottomSheetListItem(
                 icon = Icons.Outlined.Person,
-                title = "$7.58",
-                subtitle = "Personal \u00B7 Payment",
-                actionTitle = "Switch"
+                title = "2.800 Kz",
+                subtitle = "Pessoal \u00B7 Multicaixa Express",
+                actionTitle = "Alterar"
             )
             UberBottomSheetListItem(
                 icon = Icons.Outlined.Error,
                 iconTint = MaterialTheme.colorScheme.error,
                 title = null,
-                subtitle = "We can't reach our network, so the trip total might be outdated",
+                subtitle = "Sem ligação à rede, o total da viagem pode estar desatualizado",
                 actionTitle = null
             )
             TextButton(
@@ -108,7 +108,7 @@ fun FinalisingDriverScreen(
             ) {
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "Cancel",
+                    text = "Cancelar",
                     color = MaterialTheme.colorScheme.error,
                     textAlign = TextAlign.Center
                 )

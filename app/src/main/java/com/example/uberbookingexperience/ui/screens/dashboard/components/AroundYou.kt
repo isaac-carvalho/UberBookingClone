@@ -39,7 +39,7 @@ fun AroundYou(isMobile: Boolean, screenWidth: Dp, onGotoMap: () -> Unit) {
 
     ) {
         Text(
-            "Around You",
+            "Perto de si",
             modifier = Modifier.padding(horizontal = MaterialTheme.spacing.small),
             style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Medium)
         )

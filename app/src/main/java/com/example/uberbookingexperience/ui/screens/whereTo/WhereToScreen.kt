@@ -162,7 +162,7 @@ fun WhereTo(
                             .padding(MaterialTheme.spacing.medium)
                             .navigationBarsPadding()
                             .imePadding(),
-                        text = "Done"
+                        text = "Concluído"
                     ) {
                         when {
                             pickupLocationTfText.isBlank() -> {
@@ -278,7 +278,7 @@ fun WhereTo(
                                         .background(gradientRadial)
                                 )
                                 Text(
-                                    text = "Switch Rider",
+                                    text = "Mudar passageiro",
                                     style = Typography.bodyMedium,
                                     modifier = Modifier.padding(horizontal = 12.dp)
                                 )
@@ -335,7 +335,7 @@ fun WhereTo(
                                                 }
                                             }
                                             .focusRequester(pickupLocationTfFocusRequester),
-                                        placeholder = "Enter pickup location",
+                                        placeholder = "Ponto de recolha",
                                         value = pickupLocationTfText,
                                         onValueChange = { newPickupLocationText ->
                                             pickupLocationTfText = newPickupLocationText
@@ -357,7 +357,7 @@ fun WhereTo(
                                                 }
                                             }
                                             .focusRequester(whereToTfRequester),
-                                        placeholder = "Where to?",
+                                        placeholder = "Para onde vai?",
                                         value = whereToTfText,
                                         onValueChange = { newWhereToText ->
                                             whereToTfText = newWhereToText
@@ -411,8 +411,8 @@ fun WhereTo(
                                     ListTile(
                                         modifier = Modifier.width(200.dp),
                                         icon = Icons.Filled.Home,
-                                        title = "Home",
-                                        subtitle = "43, Durga Mandir Rd, new",
+                                        title = "Casa",
+                                        subtitle = "Ilha de Luanda",
                                         backgroundColor = MaterialTheme.colorScheme.secondary
                                     )
                                     UberVerticalDivider(
@@ -423,8 +423,8 @@ fun WhereTo(
                                     ListTile(
                                         modifier = Modifier.width(200.dp),
                                         icon = Icons.Filled.Work,
-                                        title = "Work",
-                                        subtitle = "Gitarattan International",
+                                        title = "Trabalho",
+                                        subtitle = "Talatona, Belas Shopping",
                                         backgroundColor = MaterialTheme.colorScheme.secondary
                                     )
                                     UberVerticalDivider(
@@ -435,7 +435,7 @@ fun WhereTo(
                                     ListTile(
                                         modifier = Modifier.width(200.dp),
                                         icon = Icons.Filled.Star,
-                                        title = "Saved Places"
+                                        title = "Locais Guardados"
                                     )
                                     UberVerticalDivider(
                                         height = 48.dp
@@ -474,7 +474,7 @@ fun WhereTo(
                                 ListTile(
                                     icon = Icons.Default.LocationOn,
                                     contentDesc = null,
-                                    title = "Set location on map",
+                                    title = "Escolher no mapa",
                                     subtitle = null
                                 ) {
                                     coroutineScope.launch {

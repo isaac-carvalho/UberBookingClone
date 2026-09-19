@@ -60,22 +60,22 @@ fun BusinessPaymentOptionScreen() {
                         contentScale = ContentScale.Crop
                     )
                     Text(
-                        text = "Get more with business travel",
+                        text = "Aproveite mais com viagens de trabalho",
                         style = MaterialTheme.typography.displaySmall,
                         textAlign = TextAlign.Center
                     )
                 }
                 BusinessBannerText(
-                    title = "Quicker, easier expensing",
-                    value = "Automatically sync with expensing apps"
+                    title = "Despesas mais rápidas e simples",
+                    value = "Sincronização automática com relatórios de despesas"
                 )
                 BusinessBannerText(
-                    title = "Keep work rides separate",
-                    value = "Get receipts at your work email"
+                    title = "Separe viagens de trabalho",
+                    value = "Receba faturas e recibos no seu email profissional"
                 )
                 BusinessBannerText(
-                    title = "Get travel reports",
-                    value = "See trip activity all in one place"
+                    title = "Relatórios de viagem",
+                    value = "Consulte todas as deslocações num único local"
                 )
             }
         }
@@ -86,7 +86,7 @@ fun BusinessPaymentOptionScreen() {
             modifier = requiredSizeModifier
                 .padding(horizontal = MaterialTheme.spacing.small)
                 .padding(top = MaterialTheme.spacing.extraLarge),
-            text = "Turn on",
+            text = "Ativar perfil profissional",
             onClick = {}
         )
     }

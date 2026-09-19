@@ -87,7 +87,7 @@ fun UberCabsListing(
             )
             Spacer(modifier = Modifier.padding(8.dp))
             Text(
-                "Choose a ride, or swipe up for more",
+                "Escolha uma viagem ou deslize para ver mais",
                 style = MaterialTheme.typography.bodyMedium,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis,
@@ -131,7 +131,7 @@ fun UberCabsListing(
                     ) {
                         Spacer(modifier = Modifier.statusBarsPadding())
                         Text(
-                            "Popular",
+                            "Mais Populares",
                             style = MaterialTheme.typography.titleLarge,
                             modifier = Modifier
                                 .fillMaxWidth()

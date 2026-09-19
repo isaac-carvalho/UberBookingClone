@@ -15,13 +15,13 @@ fun BottomActions(goToDashboard: () -> Unit) {
     ) {
         BottomSheetActionButton(
             modifier = Modifier.weight(1f),
-            text = "Cancel",
+            text = "Cancelar",
             textColor = MaterialTheme.colorScheme.error,
             onClick = goToDashboard
         )
         BottomSheetActionButton(
             modifier = Modifier.weight(1f),
-            text = "Safety",
+            text = "Segurança",
             textColor = MaterialTheme.colorScheme.secondary,
             icon = Icons.Outlined.HealthAndSafety
         )

@@ -66,21 +66,21 @@ fun RideConfirmedScreen(
             ) {
                 DescriptionTopBar(
                     elevation = 16.dp,
-                    title = "Meet at the pickup point for Home",
+                    title = "Encontro no ponto de recolha em Casa",
                     timeLeftInMinutes = 3
                 )
                 RidePin(
-                    title = "PIN for this ride",
+                    title = "Código PIN desta viagem",
                     pin = "4890"
                 )
                 DriverDescription(
                     driverImageUrl = R.drawable.driver_image,
                     driverRating = 5.0,
-                    driverName = "Dhaval",
-                    driverTotalTrips = "7,261",
+                    driverName = "Mateus",
+                    driverTotalTrips = "7.261",
                     carImageUrl = R.drawable.wagon_r_image,
-                    carNumber = "GJ01FT3805",
-                    carName = "Maruti Suzuki Wagon R"
+                    carNumber = "LD-45-89-GH",
+                    carName = "Toyota Corolla"
                 )
                 UberDivider()
                 Image(
@@ -111,27 +111,27 @@ fun RideConfirmedScreen(
             Column {
                 UberBottomSheetListItem(
                     icon = Icons.Filled.LocationOn,
-                    title = "Dev Arc Commercial Complex",
-                    subtitle = "14:16 dropoff",
-                    actionTitle = "Add or Change"
+                    title = "Belas Shopping, Talatona",
+                    subtitle = "Chegada às 14:16",
+                    actionTitle = "Alterar"
                 )
                 UberBottomSheetListItem(
                     icon = Icons.Outlined.Person,
-                    title = "$7.58",
-                    subtitle = "Personal \u00B7 Payment",
-                    actionTitle = "Switch"
+                    title = "2.800 Kz",
+                    subtitle = "Pessoal \u00B7 Multicaixa Express",
+                    actionTitle = "Alterar"
                 )
                 UberBottomSheetListItem(
                     icon = Icons.Outlined.Error,
                     iconTint = MaterialTheme.colorScheme.error,
                     title = null,
-                    subtitle = "We can't reach our network, so the trip total might be outdated",
+                    subtitle = "Sem ligação à rede, o total da viagem pode estar desatualizado",
                     actionTitle = null
                 )
                 UberBottomSheetListItem(
                     icon = Icons.Outlined.ShareLocation,
-                    title = "Share trip status",
-                    actionTitle = "Share",
+                    title = "Partilhar estado da viagem",
+                    actionTitle = "Partilhar",
                     useFullSizeDivider = true
                 )
                 BottomActions(goToDashboard = goToDashboard)

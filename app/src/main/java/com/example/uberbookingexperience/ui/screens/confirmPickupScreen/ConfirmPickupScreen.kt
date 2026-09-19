@@ -167,7 +167,7 @@ fun ConfirmPickupScreen(
                                 modifier = dynamicWidth
                                     .height(MaterialTheme.spacing.small)
                                     .background(color = MaterialTheme.colorScheme.onPrimary),
-                                text = "Processing your request...",
+                                text = "A processar o pedido...",
                                 loaderColor = MaterialTheme.colorScheme.primary,
                                 loaderThickness = MaterialTheme.spacing.extraSmall
                             )
@@ -208,7 +208,7 @@ fun ConfirmPickupScreen(
                             ) {
                                 Text(
                                     modifier = Modifier.padding(bottom = MaterialTheme.spacing.medium),
-                                    text = "Choose you pickup spot",
+                                    text = "Escolha o ponto de recolha",
                                     style = MaterialTheme.typography.titleLarge
                                 )
                                 UberDivider()
@@ -223,7 +223,7 @@ fun ConfirmPickupScreen(
                                         modifier = Modifier
                                             .padding(vertical = MaterialTheme.spacing.medium)
                                             .weight(1f),
-                                        text = "Near Home",
+                                        text = "Ilha de Luanda",
                                         style = MaterialTheme.typography.titleLarge
                                     )
                                     Text(
@@ -242,12 +242,12 @@ fun ConfirmPickupScreen(
                                                 onSearchClick()
                                             },
 
-                                        text = "Search",
+                                        text = "Pesquisar",
                                         style = MaterialTheme.typography.titleLarge.copy(textAlign = TextAlign.Center)
                                     )
                                 }
                                 UberButton(
-                                    text = "Confirm Pickup",
+                                    text = "Confirmar Recolha",
                                     modifier = Modifier.padding(MaterialTheme.spacing.medium),
                                     enabled = !locationChangeAnimation
                                 ) {
@@ -319,7 +319,7 @@ fun ConfirmPickupScreen(
                         .defaultMinSize(minWidth = 200.dp)
                         .fillMaxSize()
                         .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)),
-                    text = "Processing your request...",
+                    text = "A processar o pedido...",
                     loaderColor = MaterialTheme.colorScheme.surface
                 )
             }
@@ -412,13 +412,13 @@ fun ConfirmPickupGoogleMap(
                 MarkerState(pathLatLongsFirst.first()),
                 icon = bitmapDescriptorFromVector(LocalContext.current, R.mipmap.ub__marker_vehicle_fallback)
             ) {
-                UberMapInfoWindowText("My start Location", R.drawable.baseline_navigate_next_24)
+                UberMapInfoWindowText("Ponto de partida", R.drawable.baseline_navigate_next_24)
             }
             MarkerInfoWindowContent(
                 MarkerState(pathLatLongsFirst.last()),
                 icon = bitmapDescriptorFromVector(LocalContext.current, R.drawable.ic_location_start)
             ) {
-                UberMapInfoWindowText("My end Location", R.drawable.baseline_navigate_next_24)
+                UberMapInfoWindowText("Ponto de chegada", R.drawable.baseline_navigate_next_24)
             }
             Polyline(
                 points = pathLatLongsFirst,
@@ -451,7 +451,7 @@ fun GoogleMapCurrentLocationUI(modifier: Modifier = Modifier) {
                     horizontal = MaterialTheme.spacing.large,
                     vertical = MaterialTheme.spacing.small
                 ),
-            text = "Pick-up here",
+            text = "Recolha aqui",
             color = colorWhite,
             style = MaterialTheme.typography.bodyMedium.copy(textAlign = TextAlign.Center)
         )

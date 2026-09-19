@@ -40,35 +40,35 @@ fun PaymentOptionsScreen(
         Surface(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.padding(bodyPadding)) {
                 UberTopBar(
-                    title = "Payment Options",
+                    title = "Opções de Pagamento",
                     iconOnClick = onNavigationBack
                 )
 
-                var selectedPayeeType by rememberSaveable { mutableStateOf("Personal") }
+                var selectedPayeeType by rememberSaveable { mutableStateOf("Pessoal") }
                 PayeeType(selectedItemTitle = selectedPayeeType) { selectedItem ->
                     selectedPayeeType = selectedItem
                 }
 
                 Crossfade(targetState = selectedPayeeType) { payeeType ->
                     when (payeeType) {
-                        "Personal" -> {
-                            var isUberCashSelected by rememberSaveable { mutableStateOf(true) }
-                            var currentPaymentOption by rememberSaveable { mutableStateOf("") }
+                        "Pessoal" -> {
+                            var isGiroCashSelected by rememberSaveable { mutableStateOf(true) }
+                            var currentPaymentOption by rememberSaveable { mutableStateOf("Multicaixa Express") }
 
                             LazyColumn(
                                 modifier = Modifier.fillMaxSize()
                             ) {
                                 item {
                                     PaymentOptionsCategory(
-                                        title = "Uber Cash",
+                                        title = "Saldo GIRO",
                                         paymentOptions = listOf(
                                             PaymentOption(
                                                 R.drawable.ic_uber_logo,
-                                                name = "Uber Cash",
-                                                value = "$0.00",
-                                                selected = isUberCashSelected,
+                                                name = "Saldo GIRO",
+                                                value = "0 Kz",
+                                                selected = isGiroCashSelected,
                                                 onClick = {
-                                                    isUberCashSelected = !isUberCashSelected
+                                                    isGiroCashSelected = !isGiroCashSelected
                                                 }
                                             )
                                         ),
@@ -77,35 +77,35 @@ fun PaymentOptionsScreen(
                                 }
                                 item {
                                     PaymentOptionsCategory(
-                                        title = "Payment Method",
+                                        title = "Método de Pagamento",
                                         paymentOptions = listOf(
                                             PaymentOption(
                                                 R.drawable.ic_paytm_logo,
-                                                name = "Paytm",
-                                                selected = currentPaymentOption == "Paytm",
+                                                name = "Multicaixa Express",
+                                                selected = currentPaymentOption == "Multicaixa Express",
                                                 onClick = {
-                                                    currentPaymentOption = "Paytm"
+                                                    currentPaymentOption = "Multicaixa Express"
                                                 }
                                             ),
                                             PaymentOption(
                                                 R.drawable.ic_google_pay_logo,
-                                                name = "www.mutualmobile.com@oksbi",
-                                                selected = currentPaymentOption == "www.mutualmobile.com@oksbi",
+                                                name = "Transferência Bancária (IBAN)",
+                                                selected = currentPaymentOption == "Transferência Bancária (IBAN)",
                                                 onClick = {
                                                     currentPaymentOption =
-                                                        "www.mutualmobile.com@oksbi"
+                                                        "Transferência Bancária (IBAN)"
                                                 }
                                             ),
                                             PaymentOption(
                                                 R.drawable.ic_cash_logo,
-                                                name = "Cash",
-                                                selected = currentPaymentOption == "Cash",
+                                                name = "Dinheiro",
+                                                selected = currentPaymentOption == "Dinheiro",
                                                 onClick = {
-                                                    currentPaymentOption = "Cash"
+                                                    currentPaymentOption = "Dinheiro"
                                                 }
                                             )
                                         ),
-                                        footer = "Add Payment Method"
+                                        footer = "Adicionar Método de Pagamento"
                                     ) {
                                         onAddedPaymentOptionClick()
                                     }
@@ -113,15 +113,15 @@ fun PaymentOptionsScreen(
                                 item {
                                     PaymentOptionsCategory(
                                         modifier = Modifier.padding(top = 48.dp),
-                                        title = "Vouchers",
+                                        title = "Vales e Códigos",
                                         useBigTitle = true,
                                         paymentOptions = emptyList(),
-                                        footer = "Add voucher code"
+                                        footer = "Adicionar código promocional"
                                     )
                                 }
                             }
                         }
-                        "Business" -> {
+                        "Empresa" -> {
                             BusinessPaymentOptionScreen()
                         }
                         else -> Unit
