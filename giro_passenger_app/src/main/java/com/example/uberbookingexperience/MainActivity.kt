@@ -85,7 +85,8 @@ class MainActivity : ComponentActivity() {
                                     )
                                 },
                                 onSwitchApp = { pkg ->
-                                    GiroAppSwitcher.openApp(this@MainActivity, pkg)
+                                    val intent = this@MainActivity.packageManager.getLaunchIntentForPackage(pkg)
+                                    if (intent != null) startActivity(intent)
                                 }
                             )
                         }

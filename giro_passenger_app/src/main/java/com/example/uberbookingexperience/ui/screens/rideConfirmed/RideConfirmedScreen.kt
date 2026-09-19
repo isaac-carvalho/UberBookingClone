@@ -164,7 +164,7 @@ private fun RideConfirmedScreenPreview() {
                 }
             )
         ) {
-            RideConfirmedScreen {}
+            RideConfirmedScreen(goToDashboard = {})
         }
     }
 }

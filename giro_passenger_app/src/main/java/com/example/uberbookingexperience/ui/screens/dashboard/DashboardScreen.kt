@@ -95,7 +95,7 @@ fun DashboardScreen(
                                     fontWeight = FontWeight.Black
                                 )
                                 Text(
-                                    text = "${ongoingRide?.pickup?.name ?: ""} \u2192 ${ongoingRide?.destination?.name ?: ""}",
+                                    text = "${ongoingRide?.origin?.name ?: ""} \u2192 ${ongoingRide?.destination?.name ?: ""}",
                                     color = UberBlack,
                                     fontSize = 13.sp,
                                     fontWeight = FontWeight.SemiBold

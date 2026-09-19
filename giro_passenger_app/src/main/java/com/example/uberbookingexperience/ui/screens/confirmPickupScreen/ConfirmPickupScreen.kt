@@ -256,13 +256,11 @@ fun ConfirmPickupScreen(
                                 ) {
                                     isLocationConfirmed = true
                                     GiroRealtimeHub.requestRide(
-                                        pickup = LocationPoint("Ilha de Luanda", -8.7744, 13.2422),
-                                        destination = LocationPoint("Talatona Shopping", -8.9189, 13.1842),
                                         passengerName = "Isaac Carvalho",
                                         passengerPhone = "+244 923 884 192",
-                                        serviceType = ServiceType.RIDES,
-                                        vehicleCategory = VehicleCategory.CAR_SEDAN,
-                                        fareKz = 3500.0,
+                                        origin = LocationPoint("Ilha de Luanda", "Luanda, Angola", -8.7744, 13.2422),
+                                        destination = LocationPoint("Talatona Shopping", "Luanda Sul, Angola", -8.9189, 13.1842),
+                                        category = VehicleCategory.CAR_SEDAN,
                                         paymentMethod = PaymentMethod.MULTICAIXA_EXPRESS
                                     )
                                 }
