@@ -12,5 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Uber Booking Experience"
-include ':app'
+rootProject.name = "GIRO Platform Angola"
+include ':giro_core'
+include ':giro_passenger_app'
+include ':giro_driver_app'
+include ':giro_central_24h'
+include ':giro_admin_vault'

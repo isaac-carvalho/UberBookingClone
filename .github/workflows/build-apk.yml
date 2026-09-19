@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build Android APKs
 
 on:
   push:
@@ -30,30 +30,71 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build Debug APK
+      - name: Build All Debug APKs
         run: ./gradlew assembleDebug --stacktrace
 
-      - name: Upload APK Artifact
+      - name: Prepare Release APKs
+        run: |
+          mkdir -p release-apks
+          cp giro_passenger_app/build/outputs/apk/debug/giro_passenger_app-debug.apk release-apks/giro-passageiro.apk
+          cp giro_driver_app/build/outputs/apk/debug/giro_driver_app-debug.apk release-apks/giro-motorista.apk
+          cp giro_central_24h/build/outputs/apk/debug/giro_central_24h-debug.apk release-apks/giro-central-24h.apk
+          cp giro_admin_vault/build/outputs/apk/debug/giro_admin_vault-debug.apk release-apks/giro-admin-vault.apk
+
+      - name: Upload APK Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: UberBookingClone-Debug-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: GIRO-Angola-APKs
+          path: release-apks/*.apk
 
-      - name: Release APK
+      - name: Release APKs
         uses: softprops/action-gh-release@v2
         if: github.ref == 'refs/heads/main'
         with:
-          tag_name: v1.2.0
-          name: "GIRO v1.2.0 (Angola - Kz / Pouca Internet / Android 14+)"
+          tag_name: v2.0.0
+          name: "GIRO Angola v2.0.0 - Plataforma Completa (4 Apps Independentes)"
           body: |
-            ### GIRO - Versão v1.2.0
-            - **Nome**: GIRO
-            - **Idioma**: Português de Portugal (pt-PT)
-            - **Moeda**: Kwanza de Angola (Kz)
-            - **Endereços de Angola**: Aeroporto 4 de Fevereiro, Ilha de Luanda, Talatona, Belas Shopping, Camama, Fortaleza de São Miguel
-            - **Poupança de Dados / Internet**: Otimizado para consumir o mínimo de dados móveis (redes 2G/3G/4G instáveis em África)
-            - **Tamanho Leve**: ~18MB (bem abaixo do limite de 25MB)
-            - **Android Moderno**: targetSdk 34 (Android 14+ sem aviso de versão antiga)
-          files: app/build/outputs/apk/debug/app-debug.apk
+            # 🇦🇴 GIRO Angola v2.0.0 - Plataforma Oficial de Mobilidade, Logística & Segurança
+            
+            Plataforma completa composta por 4 aplicativos Android 100% independentes e integrados em tempo real, otimizados para Angola (Luanda), com baixo consumo de dados móveis e tamanho ultraleve (<25MB cada).
+
+            ---
+
+            ### 📱 Aplicativos Disponíveis para Download:
+            1. **[giro-passageiro.apk](https://github.com/isaac-carvalho/UberBookingClone/releases/download/v2.0.0/giro-passageiro.apk)**:
+               - Autenticação obrigatória com DDI +244 e validação SMS.
+               - 3 Serviços completos:
+                 - 🚗 **Viagens**: Carro Sedan, Carrinha Hiace, Moto Kupapata
+                 - 📦 **Entregas**: MotoBoy Estafeta, Courier Comercial, Express Urgente
+                 - 🚛 **Cargas & Mudanças**: Pick-Up 1 Ton, Canter 3.5 Ton, Pesado 10 Ton
+               - Moeda Kwanza (Kz) e suporte a Multicaixa Express (MCX).
+               - Botão de Pânico SOS 24h conectado à Central com GPS.
+               - Modo Poupança Extrema de Dados (< 15 KB/requisição).
+
+            2. **[giro-motorista.apk](https://github.com/isaac-carvalho/UberBookingClone/releases/download/v2.0.0/giro-motorista.apk)**:
+               - Login de motorista parceiro (Matrícula LD, Categoria de Veículo).
+               - Alternador Online / Offline com pulso verde de prontidão.
+               - Despacho em tempo real com modal de contagem regressiva de 30 segundos e alerta sonoro.
+               - Divisão financeira automática: 90% para o Motorista Parceiro / 10% Taxa de Manutenção GIRO.
+               - Gestão de viagens ativas ("Cheguei ao Local", "Iniciar Viagem", "Finalizar Viagem").
+               - Carteira com saldo diário e solicitação de levantamento via Multicaixa Express (MCX).
+               - Botão de Emergência SOS com ligação direta à Central e PNA (111).
+
+            3. **[giro-central-24h.apk](https://github.com/isaac-carvalho/UberBookingClone/releases/download/v2.0.0/giro-central-24h.apk)**:
+               - Login seguro para operadores táticos (ex: OP-LUANDA-07).
+               - Radar tático de Luanda com telemetria GPS ao vivo de viaturas e pedidos.
+               - Central de Emergência SOS com alarme sonoro, telemetria completa, botão de chamada direta para motorista/passageiro e acionamento da Polícia Nacional de Angola (111).
+               - Métricas em tempo real: Motoristas Online, Corridas Ativas, Incidentes Críticos.
+
+            4. **[giro-admin-vault.apk](https://github.com/isaac-carvalho/UberBookingClone/releases/download/v2.0.0/giro-admin-vault.apk)**:
+               - Cofre Administrativo protegido por PIN mestre (`2026`).
+               - Gestão de Motoristas Parceiros (Aprovação de cadastros, Suspensão de contas).
+               - Balanço Financeiro Geral (Arrecadação da taxa de 10% GIRO vs. Repasse de 90%).
+               - Fila de Levantamentos Multicaixa Express (MCX) com aprovação em 1 toque.
+               - Tabela de Tarifas Dinâmicas por categoria de serviço.
+
+            ---
+            *Compatível com Android 5.0 até Android 14+ (targetSdk 34). Todos os APKs pesam menos de 25MB.*
+          files: release-apks/*.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
