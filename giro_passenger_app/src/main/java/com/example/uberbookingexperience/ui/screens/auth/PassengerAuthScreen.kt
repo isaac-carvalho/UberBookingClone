@@ -92,60 +92,22 @@ fun PassengerAuthScreen(
                         fontSize = 13.sp
                     )
 
-                    OutlinedTextField(
+                    GiroTextField(
                         value = name,
                         onValueChange = { name = it },
-                        label = { Text("Nome Completo", color = UberGrayText) },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = UberWhite,
-                            unfocusedTextColor = UberWhite,
-                            focusedBorderColor = UberWhite,
-                            unfocusedBorderColor = UberDarkBorder,
-                            focusedContainerColor = UberDarkCard,
-                            unfocusedContainerColor = UberDarkCard
-                        ),
-                        shape = RoundedCornerShape(10.dp)
+                        label = "Nome Completo",
+                        modifier = Modifier.fillMaxWidth()
                     )
 
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        // Prefixo DDI Angola fixo
-                        Box(
-                            modifier = Modifier
-                                .height(56.dp)
-                                .width(90.dp)
-                                .background(UberDarkCard, RoundedCornerShape(10.dp))
-                                .border(1.dp, UberDarkBorder, RoundedCornerShape(10.dp)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = "+244 🇦🇴",
-                                color = UberWhite,
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-
-                        OutlinedTextField(
-                            value = phone,
-                            onValueChange = { phone = it },
-                            label = { Text("Telemóvel (ex: 923...)", color = UberGrayText) },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-                            modifier = Modifier.weight(1f),
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedTextColor = UberWhite,
-                                unfocusedTextColor = UberWhite,
-                                focusedBorderColor = UberWhite,
-                                unfocusedBorderColor = UberDarkBorder,
-                                focusedContainerColor = UberDarkCard,
-                                unfocusedContainerColor = UberDarkCard
-                            ),
-                            shape = RoundedCornerShape(10.dp)
-                        )
-                    }
+                    GiroTextField(
+                        value = phone,
+                        onValueChange = { phone = it },
+                        label = "Telemóvel",
+                        leadingText = "+244 🇦🇴",
+                        placeholder = "923 884 192",
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
                     Spacer(modifier = Modifier.height(8.dp))
 
@@ -175,21 +137,13 @@ fun PassengerAuthScreen(
                         fontSize = 13.sp
                     )
 
-                    OutlinedTextField(
+                    GiroTextField(
                         value = otpCode,
                         onValueChange = { if (it.length <= 4) otpCode = it },
-                        label = { Text("Código de 4 dígitos", color = UberGrayText) },
+                        label = "Código de 4 dígitos",
+                        placeholder = "1234",
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = UberGreen,
-                            unfocusedTextColor = UberWhite,
-                            focusedBorderColor = UberGreen,
-                            unfocusedBorderColor = UberDarkBorder,
-                            focusedContainerColor = UberDarkCard,
-                            unfocusedContainerColor = UberDarkCard
-                        ),
-                        shape = RoundedCornerShape(10.dp)
+                        modifier = Modifier.fillMaxWidth()
                     )
 
                     Row(

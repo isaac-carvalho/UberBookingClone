@@ -66,38 +66,20 @@ fun CentralAuthScreen(
                 modifier = Modifier.fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(14.dp)
             ) {
-                OutlinedTextField(
+                GiroTextField(
                     value = operatorCode,
                     onValueChange = { operatorCode = it },
-                    label = { Text("Código do Operador (ex: OP-LUANDA-07)", color = UberGrayText) },
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedTextColor = UberWhite,
-                        unfocusedTextColor = UberWhite,
-                        focusedBorderColor = UberWhite,
-                        unfocusedBorderColor = UberDarkBorder,
-                        focusedContainerColor = UberDarkCard,
-                        unfocusedContainerColor = UberDarkCard
-                    ),
-                    shape = RoundedCornerShape(10.dp)
+                    label = "Código do Operador (ex: OP-LUANDA-07)",
+                    modifier = Modifier.fillMaxWidth()
                 )
 
-                OutlinedTextField(
+                GiroTextField(
                     value = password,
                     onValueChange = { password = it },
-                    label = { Text("Palavra-passe de Segurança", color = UberGrayText) },
+                    label = "Palavra-passe de Segurança",
                     visualTransformation = PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedTextColor = UberWhite,
-                        unfocusedTextColor = UberWhite,
-                        focusedBorderColor = UberWhite,
-                        unfocusedBorderColor = UberDarkBorder,
-                        focusedContainerColor = UberDarkCard,
-                        unfocusedContainerColor = UberDarkCard
-                    ),
-                    shape = RoundedCornerShape(10.dp)
+                    modifier = Modifier.fillMaxWidth()
                 )
 
                 Text(

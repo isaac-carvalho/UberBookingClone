@@ -121,8 +121,74 @@ fun GiroSosButton(
 }
 
 @Composable
+fun GiroTextField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    label: String,
+    modifier: Modifier = Modifier,
+    placeholder: String = "",
+    leadingText: String? = null,
+    keyboardOptions: androidx.compose.foundation.text.KeyboardOptions = androidx.compose.foundation.text.KeyboardOptions.Default,
+    visualTransformation: androidx.compose.ui.text.input.VisualTransformation = androidx.compose.ui.text.input.VisualTransformation.None
+) {
+    Column(modifier = modifier) {
+        if (label.isNotEmpty()) {
+            Text(
+                text = label,
+                color = UberGrayText,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier.padding(bottom = 6.dp)
+            )
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(10.dp))
+                .background(UberDarkCard)
+                .border(1.dp, UberDarkBorder, RoundedCornerShape(10.dp))
+                .padding(horizontal = 14.dp, vertical = 14.dp)
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                if (leadingText != null) {
+                    Text(
+                        text = leadingText,
+                        color = UberWhite,
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                }
+                androidx.compose.foundation.text.BasicTextField(
+                    value = value,
+                    onValueChange = onValueChange,
+                    modifier = Modifier.weight(1f),
+                    textStyle = androidx.compose.ui.text.TextStyle(
+                        color = UberWhite,
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Medium
+                    ),
+                    cursorBrush = androidx.compose.ui.graphics.SolidColor(UberWhite),
+                    keyboardOptions = keyboardOptions,
+                    visualTransformation = visualTransformation,
+                    decorationBox = { innerTextField ->
+                        if (value.isEmpty() && placeholder.isNotEmpty()) {
+                            Text(text = placeholder, color = UberGrayText, fontSize = 15.sp)
+                        }
+                        innerTextField()
+                    }
+                )
+            }
+        }
+    }
+}
+
+@Composable
 fun GiroTopBar(
     title: String,
+    subtitle: String = "",
+    showSos: Boolean = false,
+    onSosClick: (() -> Unit)? = null,
     onBackClick: (() -> Unit)? = null,
     rightContent: (@Composable () -> Unit)? = null
 ) {
@@ -145,14 +211,26 @@ fun GiroTopBar(
                     )
                 }
             }
-            Text(
-                text = title,
-                color = UberWhite,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(start = if (onBackClick != null) 4.dp else 0.dp)
-            )
+            Column(modifier = Modifier.padding(start = if (onBackClick != null) 4.dp else 0.dp)) {
+                Text(
+                    text = title,
+                    color = UberWhite,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                if (subtitle.isNotEmpty()) {
+                    Text(
+                        text = subtitle,
+                        color = UberGrayText,
+                        fontSize = 11.sp
+                    )
+                }
+            }
         }
-        rightContent?.invoke()
+        if (showSos && onSosClick != null) {
+            GiroSosButton(onSosClick = onSosClick)
+        } else {
+            rightContent?.invoke()
+        }
     }
 }

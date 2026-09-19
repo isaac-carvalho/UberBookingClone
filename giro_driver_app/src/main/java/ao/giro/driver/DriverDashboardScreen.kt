@@ -327,15 +327,12 @@ fun DriverDashboardScreen(
                 Column {
                     Text("Transferência imediata para o seu número MCX:", color = UberGrayText, fontSize = 13.sp)
                     Spacer(modifier = Modifier.height(10.dp))
-                    OutlinedTextField(
+                    GiroTextField(
                         value = withdrawalAmount,
                         onValueChange = { withdrawalAmount = it },
-                        label = { Text("Valor em Kwanzas (Kz)", color = UberGrayText) },
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = UberWhite,
-                            unfocusedTextColor = UberWhite,
-                            focusedBorderColor = UberGreen
-                        )
+                        label = "Valor em Kwanzas (Kz)",
+                        leadingText = "Kz",
+                        placeholder = "25000"
                     )
                 }
             },

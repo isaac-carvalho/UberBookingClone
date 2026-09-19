@@ -71,84 +71,35 @@ fun DriverAuthScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 if (!isCodeSent) {
-                    OutlinedTextField(
+                    GiroTextField(
                         value = name,
                         onValueChange = { name = it },
-                        label = { Text("Nome Completo", color = UberGrayText) },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = UberWhite,
-                            unfocusedTextColor = UberWhite,
-                            focusedBorderColor = UberWhite,
-                            unfocusedBorderColor = UberDarkBorder,
-                            focusedContainerColor = UberDarkCard,
-                            unfocusedContainerColor = UberDarkCard
-                        ),
-                        shape = RoundedCornerShape(10.dp)
+                        label = "Nome Completo",
+                        modifier = Modifier.fillMaxWidth()
                     )
 
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .height(56.dp)
-                                .width(90.dp)
-                                .background(UberDarkCard, RoundedCornerShape(10.dp))
-                                .border(1.dp, UberDarkBorder, RoundedCornerShape(10.dp)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text("+244 🇦🇴", color = UberWhite, fontWeight = FontWeight.Bold)
-                        }
-                        OutlinedTextField(
-                            value = phone,
-                            onValueChange = { phone = it },
-                            label = { Text("Telemóvel (ex: 923...)", color = UberGrayText) },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-                            modifier = Modifier.weight(1f),
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedTextColor = UberWhite,
-                                unfocusedTextColor = UberWhite,
-                                focusedBorderColor = UberWhite,
-                                unfocusedBorderColor = UberDarkBorder,
-                                focusedContainerColor = UberDarkCard,
-                                unfocusedContainerColor = UberDarkCard
-                            ),
-                            shape = RoundedCornerShape(10.dp)
-                        )
-                    }
+                    GiroTextField(
+                        value = phone,
+                        onValueChange = { phone = it },
+                        label = "Telemóvel",
+                        leadingText = "+244 🇦🇴",
+                        placeholder = "923 000 000",
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
-                    OutlinedTextField(
+                    GiroTextField(
                         value = vehicle,
                         onValueChange = { vehicle = it },
-                        label = { Text("Modelo do Veículo", color = UberGrayText) },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = UberWhite,
-                            unfocusedTextColor = UberWhite,
-                            focusedBorderColor = UberWhite,
-                            unfocusedBorderColor = UberDarkBorder,
-                            focusedContainerColor = UberDarkCard,
-                            unfocusedContainerColor = UberDarkCard
-                        ),
-                        shape = RoundedCornerShape(10.dp)
+                        label = "Modelo do Veículo",
+                        modifier = Modifier.fillMaxWidth()
                     )
 
-                    OutlinedTextField(
+                    GiroTextField(
                         value = plate,
                         onValueChange = { plate = it },
-                        label = { Text("Matrícula (ex: LD-45-89-GH)", color = UberGrayText) },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = UberWhite,
-                            unfocusedTextColor = UberWhite,
-                            focusedBorderColor = UberWhite,
-                            unfocusedBorderColor = UberDarkBorder,
-                            focusedContainerColor = UberDarkCard,
-                            unfocusedContainerColor = UberDarkCard
-                        ),
-                        shape = RoundedCornerShape(10.dp)
+                        label = "Matrícula (ex: LD-45-89-GH)",
+                        modifier = Modifier.fillMaxWidth()
                     )
 
                     Spacer(modifier = Modifier.height(6.dp))
@@ -174,21 +125,13 @@ fun DriverAuthScreen(
                         color = UberGrayText,
                         fontSize = 13.sp
                     )
-                    OutlinedTextField(
+                    GiroTextField(
                         value = code,
                         onValueChange = { code = it },
-                        label = { Text("Código de 4 dígitos", color = UberGrayText) },
+                        label = "Código de 4 dígitos",
+                        placeholder = "7788",
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = UberGreen,
-                            unfocusedTextColor = UberWhite,
-                            focusedBorderColor = UberGreen,
-                            unfocusedBorderColor = UberDarkBorder,
-                            focusedContainerColor = UberDarkCard,
-                            unfocusedContainerColor = UberDarkCard
-                        ),
-                        shape = RoundedCornerShape(10.dp)
+                        modifier = Modifier.fillMaxWidth()
                     )
                     GiroButton(
                         text = "Iniciar Sessão do Condutor",
